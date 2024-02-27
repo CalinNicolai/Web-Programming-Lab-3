@@ -93,7 +93,7 @@ function calculateAverage($transactions){
 
 function mapTransactionDescriptions($transactions):array{
     return array_map(function ($transactions){
-        return $transactions["transaction_description"];
+        return $transactions->$description;
     }, $transactions);
 }
 ?>
