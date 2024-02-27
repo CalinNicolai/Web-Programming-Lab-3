@@ -92,7 +92,7 @@ function calculateTotalAmount($transactions){
     if (empty($transactions)) return 0;
     $total = 0;
     foreach ($transactions as $transaction ){
-        $total+=$transaction["transaction_amount"];
+        $total+=$transaction->$amount;
     }
     return $total;
 }
@@ -103,7 +103,7 @@ function calculateTotalAmount($transactions){
 ```php
 function mapTransactionDescriptions($transactions):array{
     return array_map(function ($transactions){
-        return $transactions["transaction_description"];
+        return $transactions->$descriptrion;
     }, $transactions);
 }
 ```
